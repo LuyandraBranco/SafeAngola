@@ -7,10 +7,12 @@ export function Splach() {
     const router = useRouter();
 
     useEffect(() => {
-        setInterval(() => {
-            router.push('/onboarding');
+        const timer = setTimeout(() => {
+            router.replace('/onboarding');
         }, 4000);
-    })
+
+        return () => clearTimeout(timer);
+    }, []);
     return (
         <SafeAreaView style={[styles.containeSplach]}>
             <View style={[styles.imageContainer]}>

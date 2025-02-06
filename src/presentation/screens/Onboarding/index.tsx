@@ -13,7 +13,7 @@ export function Onboarding() {
         if (currentScreen < onboardingData.length - 1) {
             setCurrentScreen((prevScreen) => prevScreen + 1);
         } else {
-            router.push('/auth');
+            router.replace('/auth');
         }
     };
 
@@ -31,8 +31,8 @@ export function Onboarding() {
                 </TouchableOpacity>
                 <Text
                     style={styles.headerTxt}
-                    onPress={async () => {
-                        router.push('/auth');
+                    onPress={() => {
+                        router.replace('/auth');
                     }}
                 >
                     Skip

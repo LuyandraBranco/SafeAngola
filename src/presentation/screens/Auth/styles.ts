@@ -11,29 +11,36 @@ export default StyleSheet.create({
         justifyContent: 'flex-end',
     },
     content: {
-        padding: 20
+        padding: 20,
+        marginBottom: 50
     },
     title: {
         fontSize: 24,
         fontWeight: 'bold',
-        color: '#fff',
+        color: '#121212',
         marginBottom: 10,
     },
     description: {
         fontSize: 16,
-        color: '#fff',
-        marginBottom: 20,
+        color: '#121212',
+        marginBottom: 30,
     },
     buttonContainer: {
         flexDirection: 'row',
         justifyContent: 'space-between',
+        gap: 20
     },
     button: {
         backgroundColor: '#E5383B',
         padding: 15,
         borderRadius: 30,
         flex: 1,
-        marginHorizontal: 5,
+    },
+    buttonLogin: {
+        backgroundColor: '#780000',
+        padding: 15,
+        borderRadius: 30,
+        flex: 1,
     },
     buttonText: {
         color: 'white',
