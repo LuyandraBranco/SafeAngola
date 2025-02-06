@@ -1,17 +1,19 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { View, Text, Image, TouchableOpacity, SafeAreaView } from "react-native";
 import styles from "./styles";
 import { CaretLeft } from "phosphor-react-native";
 import onboardingData from "./data";
+import { useRouter } from "expo-router";
 
 export function Onboarding() {
     const [currentScreen, setCurrentScreen] = useState(0);
+    const router = useRouter();
 
     const handleNext = async () => {
         if (currentScreen < onboardingData.length - 1) {
             setCurrentScreen((prevScreen) => prevScreen + 1);
         } else {
-            //Ir pra tela de Auth
+            router.push('/auth');
         }
     };
 
@@ -30,7 +32,7 @@ export function Onboarding() {
                 <Text
                     style={styles.headerTxt}
                     onPress={async () => {
-                        //Ir pra tela de Auth
+                        router.push('/auth');
                     }}
                 >
                     Skip
