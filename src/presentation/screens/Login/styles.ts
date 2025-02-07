@@ -1,10 +1,6 @@
 import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
-  backgroundImage: {
-    flex: 1,
-    resizeMode: "cover",
-  },
   scrollView: {
     flexGrow: 1,
   },
@@ -12,7 +8,7 @@ export default StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     padding: 20,
-    backgroundColor: 'rgba(255, 255, 255, 0.8)',
+    backgroundColor: "#F7FAFC",
   },
   header: {
     alignItems: "center",
@@ -25,7 +21,7 @@ export default StyleSheet.create({
     height: 80,
     justifyContent: "center",
     alignItems: "center",
-    marginBottom: 20
+    marginBottom: 20,
   },
   title: {
     fontSize: 28,
@@ -40,11 +36,11 @@ export default StyleSheet.create({
   },
   formContainer: {
     borderRadius: 20,
-    padding: 20
+    padding: 5,
   },
   inputContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     backgroundColor: "#F0F0F0",
     borderRadius: 10,
     marginBottom: 15,
@@ -78,8 +74,9 @@ export default StyleSheet.create({
     fontSize: 16,
   },
   switchAuthTextBold: {
-    fontWeight: "bold",
     color: "#E5383B",
+    marginTop: 15,
+    marginLeft: 5
   },
   tabBar: {
     backgroundColor: "rgba(255, 255, 255, 0.9)",
