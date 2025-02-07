@@ -1,25 +1,15 @@
-"use client";
-
 import { useState } from "react";
 import {
   View,
   Text,
   TextInput,
   TouchableOpacity,
-  SafeAreaView,
-  KeyboardAvoidingView,
-  Platform,
   ScrollView,
+  ImageBackground,
+  KeyboardAvoidingView,
 } from "react-native";
-import {
-  Bell,
-  Car,
-  Envelope,
-  Lock,
-  ShieldCheck,
-  WarningOctagon,
-} from "phosphor-react-native";
-import { BlurView } from "expo-blur";
+import { Link } from "expo-router";
+import { Ionicons } from "@expo/vector-icons";
 import styles from "./styles";
 
 export function Login() {
@@ -27,15 +17,17 @@ export function Login() {
   const [password, setPassword] = useState("");
 
   return (
-    <SafeAreaView style={styles.container}>
-      <KeyboardAvoidingView
-        behavior={Platform.OS === "ios" ? "padding" : "height"}
-        style={styles.container}
-      >
-        <ScrollView contentContainerStyle={styles.scrollView}>
+    <ImageBackground
+      source={{
+        uri: "https://images.unsplash.com/photo-1557683316-973673baf926?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Z3JhZGllbnQlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fHww",
+      }}
+      style={styles.backgroundImage}
+    >
+      <ScrollView contentContainerStyle={styles.scrollView}>
+        <KeyboardAvoidingView style={styles.container}>
           <View style={styles.header}>
             <View style={styles.iconContainer}>
-              <WarningOctagon color="#FFFFFF" size={40} weight="fill" />
+              <Ionicons name="lock-closed" size={30} color="#FFFFFF" />
             </View>
             <Text style={styles.title}>SafeAngola</Text>
             <Text style={styles.subtitle}>
@@ -43,26 +35,14 @@ export function Login() {
             </Text>
           </View>
 
-          <View style={styles.featuresContainer}>
-            <View style={styles.featureItem}>
-              <Car color="#E5383B" size={32} weight="duotone" />
-              <Text style={styles.featureText}>
-                Monitoramento em tempo real
-              </Text>
-            </View>
-            <View style={styles.featureItem}>
-              <Bell color="#E5383B" size={32} weight="duotone" />
-              <Text style={styles.featureText}>Alertas instantâneos</Text>
-            </View>
-            <View style={styles.featureItem}>
-              <ShieldCheck color="#E5383B" size={32} weight="duotone" />
-              <Text style={styles.featureText}>Segurança aprimorada</Text>
-            </View>
-          </View>
-
-          <BlurView intensity={0} tint="light" style={styles.formContainer}>
+          <View style={styles.formContainer}>
             <View style={styles.inputContainer}>
-              <Envelope color="#E5383B" size={24} weight="duotone" />
+              <Ionicons
+                name="mail-outline"
+                size={24}
+                color="#A0AEC0"
+                style={styles.inputIcon}
+              />
               <TextInput
                 style={styles.input}
                 placeholder="E-mail"
@@ -75,7 +55,12 @@ export function Login() {
             </View>
 
             <View style={styles.inputContainer}>
-              <Lock color="#E5383B" size={24} weight="duotone" />
+              <Ionicons
+                name="key-outline"
+                size={24}
+                color="#A0AEC0"
+                style={styles.inputIcon}
+              />
               <TextInput
                 style={styles.input}
                 placeholder="Senha"
@@ -86,19 +71,21 @@ export function Login() {
               />
             </View>
 
-            <TouchableOpacity style={styles.loginButton} onPress={() => {}}>
-              <Text style={styles.loginButtonText}>Entrar</Text>
+            <TouchableOpacity style={styles.authButton} onPress={() => {}}>
+              <Text style={styles.authButtonText}>Entrar</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={() => {}}>
-              <Text style={styles.signupText}>
-                Novo por aqui?{" "}
-                <Text style={styles.signupTextBold}>Cadastre-se</Text>
-              </Text>
-            </TouchableOpacity>
-          </BlurView>
-        </ScrollView>
-      </KeyboardAvoidingView>
-    </SafeAreaView>
+            <Link href="/signup" asChild>
+              <TouchableOpacity>
+                <Text style={styles.switchAuthText}>
+                  Novo por aqui?{" "}
+                  <Text style={styles.switchAuthTextBold}>Cadastre-se</Text>
+                </Text>
+              </TouchableOpacity>
+            </Link>
+          </View>
+        </KeyboardAvoidingView>
+      </ScrollView>
+    </ImageBackground>
   );
 }
