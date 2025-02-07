@@ -14,7 +14,7 @@ export default StyleSheet.create({
     alignItems: "center",
   },
   activeButton: {
-    backgroundColor: "#cccccc",
+    backgroundColor: "#f5f5f5",
     borderRadius: 10,
     elevation: 2,
   },

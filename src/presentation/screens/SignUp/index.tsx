@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   ScrollView,
   ImageBackground,
+  KeyboardAvoidingView,
 } from "react-native";
 import { Link } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
@@ -20,7 +21,31 @@ export function SignUp() {
 
   return (
     <ScrollView contentContainerStyle={styles.scrollView}>
-      <View style={styles.container}>
+      <KeyboardAvoidingView style={styles.container}>
+        <View
+          style={{
+            position: "absolute",
+            top: -50,
+            left: -50,
+            width: 150,
+            height: 150,
+            backgroundColor: "#E5383B",
+            borderRadius: 75,
+            opacity: 0.4,
+          }}
+        />
+        <View
+          style={{
+            position: "absolute",
+            bottom: -50,
+            right: -50,
+            width: 150,
+            height: 150,
+            backgroundColor: "#E5383B",
+            borderRadius: 75,
+            opacity: 0.4,
+          }}
+        />
         <View style={styles.header}>
           <View style={styles.iconContainer}>
             <Ionicons name="person-add" size={30} color="#FFFFFF" />
@@ -89,7 +114,7 @@ export function SignUp() {
             <Text style={styles.authButtonText}>Cadastrar</Text>
           </TouchableOpacity>
         </View>
-      </View>
+      </KeyboardAvoidingView>
     </ScrollView>
   );
 }

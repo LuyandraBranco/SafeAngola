@@ -5,7 +5,6 @@ import {
   TextInput,
   TouchableOpacity,
   ScrollView,
-  ImageBackground,
   KeyboardAvoidingView,
 } from "react-native";
 import { Link } from "expo-router";
@@ -21,6 +20,31 @@ export function Login() {
   return (
     <ScrollView contentContainerStyle={styles.scrollView}>
       <KeyboardAvoidingView style={styles.container}>
+        <View
+          style={{
+            position: "absolute",
+            top: -50,
+            left: -50,
+            width: 150,
+            height: 150,
+            backgroundColor: "#E5383B",
+            borderRadius: 75,
+            opacity: 0.4,
+          }}
+        />
+        <View
+          style={{
+            position: "absolute",
+            bottom: -50,
+            right: -50,
+            width: 150,
+            height: 150,
+            backgroundColor: "#E5383B",
+            borderRadius: 75,
+            opacity: 0.4,
+          }}
+        />
+
         <View style={styles.header}>
           <View style={styles.iconContainer}>
             <Ionicons name="lock-closed" size={30} color="#FFFFFF" />
@@ -73,6 +97,7 @@ export function Login() {
             <Text style={styles.authButtonText}>Entrar</Text>
           </TouchableOpacity>
         </View>
+
         <Link href="/login" asChild>
           <TouchableOpacity>
             <Text style={styles.switchAuthTextBold}>
